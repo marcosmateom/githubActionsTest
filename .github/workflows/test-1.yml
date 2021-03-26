@@ -52,7 +52,7 @@ jobs:
           echo ${{env.branchName}}
     
       - name: r22un on devtest
-        if: ${{env.brachName == "devtest"}} 
+        if: ${{env.brachName == devtest}} 
         run: echo ${GITHUB_REF##*/}
         
       - name: run on main
