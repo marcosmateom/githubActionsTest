@@ -51,11 +51,11 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Depending on branch
-        if: ${{ env.branchName == "main" }} 
+        if: ${{ env.branchName == 'main' }} 
         run: echo "Este si es main"
         
       - name: Not the branch
-        if: ${{ env.branchName != "main" }} 
+        if: ${{ env.branchName != 'main' }} 
         run: echo "Este es otro"
       
       
