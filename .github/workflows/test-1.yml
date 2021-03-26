@@ -52,11 +52,11 @@ jobs:
           echo ${{env.branchName}}
     
       - name: run on devtest
-        if: env.branchName == 'devtest'
+        if: ${{env.branchName}} == 'devtest'
         run: echo ${GITHUB_REF##*/}
         
       - name: run on main
-        if: env.branchName == 'main'
+        if: ${{env.branchName}} == 'main'
         run: echo ${GITHUB_REF##*/}
     
       
