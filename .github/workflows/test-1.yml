@@ -55,6 +55,16 @@ jobs:
         run: |
           echo ${GITHUB_REF##*/}
           echo ${{ env.branchName }}
+  # job on pull request
+  pullreq:
+    runs-on: ubuntu-latest
+    # if: github.head_ref == 'refs/heads/main'
+    steps:
+     - name: only on pull request
+       if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+       run:  |
+        echo This event is a pull request that had an assignee removed.
+        echo ${GITHUB_HEAD_REF##*/}
       
       
   
