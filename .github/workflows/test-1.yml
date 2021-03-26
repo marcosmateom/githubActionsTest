@@ -50,6 +50,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Prints current branch and env.branch
+        run: |
+          echo ${GITHUB_REF##*/}
+          echo ${{ env.landingName }}
+        
+      - name: Conditional
+        if: ${{ env.branchName == ${GITHUB_REF##*/} }} 
+        run: echo "Son iguales"
+      
       - name: Depending on branch
         if: ${{ env.branchName == 'main' }} 
         run: echo "Este si es main"
