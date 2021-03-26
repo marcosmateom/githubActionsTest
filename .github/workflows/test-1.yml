@@ -47,6 +47,7 @@ jobs:
   # another job
   branches:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v2
       
@@ -56,7 +57,7 @@ jobs:
           echo ${{ env.branchName }}
         
       - name: Depending on branch
-        if: ${{ env.branchName == 'main' }} 
+        if: ${{ env.branchName == main }} 
         run: echo "Este si es main"
         
       - name: Not the branch
