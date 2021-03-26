@@ -47,7 +47,7 @@ jobs:
     steps:
     
       - name: run on devtest
-        if: env.branchName == 'devtest'
+        if: env.branchName === 'devtest'
         run: echo ${GITHUB_REF##*/}
         
       - name: run on main
