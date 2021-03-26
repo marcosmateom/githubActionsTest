@@ -44,7 +44,19 @@ jobs:
         
       - name: Prints env variable
         run: echo ${{ env.landingName }}
+  # another job
+  branches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
       
+      - name: Depending on branch
+        if: ${{ env.branchName }} == "main"
+        run: echo "Este si es main"
+        
+      - name: Not the branch
+        if: ${{ env.branchName }} != "main"
+        run: echo "Este es otro"
       
       
   
