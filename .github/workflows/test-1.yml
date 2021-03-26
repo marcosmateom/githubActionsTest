@@ -40,10 +40,10 @@ jobs:
           echo test, and deploy your project.
       
       - name: Prints current branch
-        run: ${GITHUB_REF##*/}
+        run: echo ${GITHUB_REF##*/}
         
       - name: Prints env variable
-        run: ${{ env.landingName }}
+        run: echo ${{ env.landingName }}
       
       
       
