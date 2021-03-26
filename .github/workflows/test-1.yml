@@ -53,7 +53,7 @@ jobs:
       - name: Prints current branch and env.branch
         run: |
           echo ${GITHUB_REF##*/}
-          echo ${{ env.landingName }}
+          echo ${{ env.branchName }}
         
       - name: Depending on branch
         if: ${{ env.branchName == 'main' }} 
