@@ -55,14 +55,6 @@ jobs:
         run: |
           echo ${GITHUB_REF##*/}
           echo ${{ env.branchName }}
-        
-      - name: Depending on branch
-        if: ${{ env.branchName == main }} 
-        run: echo "Este si es main"
-        
-      - name: Not the branch
-        if: ${{ env.branchName != 'main' }} 
-        run: echo "Este es otro"
       
       
   
