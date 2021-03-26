@@ -56,7 +56,7 @@ jobs:
           echo ${{ env.landingName }}
         
       - name: Conditional
-        if: ${{ env.branchName == GITHUB_REF##*/ }} 
+        if: ${{ env.branchName == $GITHUB_REF##*/ }} 
         run: echo "Son iguales"
       
       - name: Depending on branch
