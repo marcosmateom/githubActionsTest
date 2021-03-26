@@ -60,7 +60,7 @@ jobs:
         run: echo ${GITHUB_REF##*/}
         
       - name: run on devtest22
-        if: ${{env.branchName}} == devtest
+        if: ${{env.branchName}} == main
         run: echo ${GITHUB_REF##*/}
       
   
