@@ -49,16 +49,18 @@ jobs:
       - name: always run
         run: |
           echo {env.branchName}
-          echo ${{env.branchName}}
+          echo ${  {env.branchName}}
     
-      - name: run on devtest
-        if: ${{env.branchName}} == 'devtest'
+      - name: r22un on devtest
+        if: ${{env.brachName} == "devtest"
         run: echo ${GITHUB_REF##*/}
         
       - name: run on main
-        if: ${{env.branchName}} == 'main'
+        if: ${{env.branchName}} == "main"
         run: echo ${GITHUB_REF##*/}
-    
+      - name: run on devtest22
+        if: ${{env.branchName}} == devtest
+        run: echo ${GITHUB_REF##*/}
       
   
         
