@@ -48,8 +48,9 @@ jobs:
     
       - name: always run
         run: |
-          echo env.branchName
-          echo $env.branchName
+          echo {env.branchName}
+          echo ${env.branchName}
+          echo ${{env.branchName}}
     
       - name: run on devtest
         if: env.branchName == 'devtest'
