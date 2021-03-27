@@ -61,7 +61,7 @@ jobs:
     # if: github.head_ref == 'refs/heads/main'
     steps:
      - name: only on pull request
-       if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+       if: ${{ github.event_name == 'pull_request' }}
        run:  |
         echo This event is a pull request that had an assignee removed.
         echo ${GITHUB_HEAD_REF##*/}
